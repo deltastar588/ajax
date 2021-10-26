@@ -66,6 +66,11 @@ let pokemonRepository = (function () {
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
       console.log(item);
+      document.querySelector(".imageDiv").innerHTML="";
+      let image = document.createElement("img");
+      image.src=item.imageUrl;
+      image.classList.add("detail-image");
+      document.querySelector(".imageDiv").appendChild(image);
     });
   }
   // This
